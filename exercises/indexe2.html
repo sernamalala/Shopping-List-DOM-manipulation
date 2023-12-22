@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+</head>
+<body>
+    <style>
+        p{
+            display: inline;
+        }
+
+        li {
+        margin-bottom: 10px;
+      }
+
+      li #sumbit {
+        font-size: 8px;
+        margin-left: 20px;
+        color: #666;
+      }
+    </style>
+    <section class="entry">
+        <h1>
+            My shopping list
+        </h1>
+        <p>Enter a new item:</p>
+    <input type="text" name="" id="textInput">
+    <button id="submit">Add item</button>
+    </section>
+    <ul>
+
+    </ul>
+    <script>
+        let list = document.querySelector("ul");
+        let input = document.querySelector("#textInput");
+        let submit = document.querySelector("#submit");
+
+
+        submit.addEventListener("click", function() 
+        {
+            let inputValue = input.value;
+            
+
+        let listItem = document.createElement("li");
+        let span= document.createElement("span");
+        let submit2 = document.createElement("button");
+
+        listItem.appendChild(span);
+        span.textContent = inputValue;
+        listItem.appendChild(submit2); 
+        submit2.textContent = "Delete"; 
+        list.appendChild(listItem);
+
+
+        submit2.addEventListener('click', () => {
+          list.removeChild(listItem);
+        });
+        
+        input.focus();
+        });
+
+        
+   
+    </script>
+</body>
+</html>
